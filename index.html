@@ -1,0 +1,103 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-mail (Free Temporary/Disposable Email)</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="T-mail is a free temporary/disposable email service that helps you avoid spam. Create and receive temporary emails to keep your personal inbox clean and spam-free.">
+    <meta name="keywords" content="temporary email, disposable email, temp mail, 10minutemail, spam-free email, fake mail, trash mail">
+    <meta name="author" content="T-mail">
+    <link rel="canonical" href="https://www.t-mail.tech">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="T-mail (Free Temporary/Disposable Email)">
+    <meta property="og:description" content="T-mail is a free temporary/disposable email service that helps you avoid spam. Create and receive temporary emails to keep your personal inbox clean and spam-free.">
+    <meta property="og:image" content="https://www.t-mail.tech/logo.png">
+    <meta property="og:url" content="https://www.t-mail.tech">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:title" content="T-mail (Free Temporary/Disposable Email)">
+    <meta name="twitter:description" content="T-mail is a free temporary/disposable email service that helps you avoid spam. Create and receive temporary emails to keep your personal inbox clean and spam-free.">
+    <meta name="twitter:image" content="https://www.t-mail.tech/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Adsense Tags -->
+    <meta name="google-adsense-account" content="ca-pub-8971361994446647">
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8971361994446647"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>ArYAN T- MAIL</h1>
+        <p>Create and receive email to avoid spam</p>
+    </div>
+    <div class="container">
+        <h2 class="text-3xl font-bold text-center mb-4">Free Temporary Email</h2>
+        <div class="text-center mb-6">
+            <p class="text-xl">Your temporary email:</p>
+            <div class="mt-2">
+                <input type="text" class="text-lg font-semibold bg-gray-800 p-2 rounded-md w-full text-center" id="email" value="674db1368c03d@t-mail.tech" readonly>
+            </div>
+            <div class="mt-4 space-y-2 sm:space-y-0 sm:space-x-2 flex flex-col sm:flex-row justify-center">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md" onclick="copyToClipboard()"><i class="fas fa-copy"></i> Copy</button>
+                <button class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md" onclick="generateNewEmail()"><i class="fas fa-envelope"></i> Generate New Email</button>
+                <button class="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded-md" onclick="refreshInbox()">
+                    <i class="fas fa-sync-alt fa-spin" id="refreshIcon"></i> Refresh
+                </button>
+                <button class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md" onclick="deleteEmail()"><i class="fas fa-trash"></i> Delete</button>
+            </div>
+        </div>
+        <div class="flex items-center justify-center mb-6">
+            <input type="text" class="border border-gray-300 p-2 rounded-l-md w-full" id="emailInput" placeholder="Enter email name">
+            <select class="border border-gray-300 p-2 rounded-r-md bg-white text-gray-700" id="domainSelect">
+                <option value="t-mail.tech" selected>t-mail.tech</option>
+                <option value="fbimg.click">fbimg.click</option>
+                <option value="fbrankupgif.click">fbrankupgif.click</option>
+                <option value="lianeai.click">lianeai.click</option>
+                <option value="hazeyy.click">hazeyy.click</option>
+                <option value="tangina.click">tangina.click</option>
+            </select>
+            <button class="bg-indigo-500 hover:bg-indigo-600 text-white py-2 px-4 rounded-md ml-2" onclick="checkEmail()"><i class="fas fa-check"></i> Check Email</button>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full table-auto">
+                <thead>
+                    <tr class="bg-gray-800">
+                        <th class="px-4 py-2 text-left">Subject</th>
+                        <th class="px-4 py-2 text-left">From</th>
+                        <th class="px-4 py-2 text-left">Date</th>
+                    </tr>
+                </thead>
+                <tbody id="inbox" class="bg-gray-700 divide-y divide-gray-600"></tbody>
+            </table>
+        </div>
+        <div class="description">
+            <p>Fake email. Why should you use temporary email?</p>
+            <p>Disposable email is a service, that allows users to generate email address and receive emails at this temporary address. After a certain period of time email will be deleted and address will be canceled. Disposable email is also called tempmail, 10minutemail, throwaway email, fake mail or trash mail. Why should you use disposable email? To avoid SPAM. Today, a lot of web pages, blogs, forums and services are asking you to register or provide email address to read comments, download content or register account or profile. Next, a lot of these services will use your private email address to send you spam. That is why you should keep your private email address for your family and friends and should use disposable email always for untrusted websites, to keep your privacy and avoid spam.</p>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script>
+        let email = "674db1368c03d@t-mail.tech";
+
+        window.onload = function() {
+            document.getElementById('email').value = email;
+            refreshInbox();
+            autoRefresh();
+        };
+    </script>
+</body>
+</html>
+
