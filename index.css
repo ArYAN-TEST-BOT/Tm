@@ -1,0 +1,64 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #7F00FF, #E100FF);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    color: #fff;
+    padding-top: 80px;
+}
+
+.header {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.header p {
+    font-size: 1rem;
+    color: #D1D5DB;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    color: #A0AEC0;
+}
+
+select {
+    color: #4A5568;
+}
+
+.description {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #E2E8F0;
+    text-align: justify;
+}
+
+@media (max-width: 640px) {
+    .header h1 {
+        font-size: 1.25rem;
+    }
+    .header p {
+        font-size: 0.75rem;
+    }
+    .description {
+        font-size: 0.75rem;
+    }
+}
